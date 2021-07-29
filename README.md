@@ -1,70 +1,190 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# API
 
-## Available Scripts
+Multiple universes superheroes open-source REST API
 
-In the project directory, you can run:
+## References
+- [glossary](glossary.md)
 
-### `npm start`
+### base url
+`https://akabab.github.io/superhero-api/api`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+or cached CDN (faster)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+`https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api`
 
-### `npm test`
+see
+- [JSDelivr](https://www.jsdelivr.com/)
+- [GitHack](https://raw.githack.com/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### [routes](#routes-1)
+- [`/all.json`](#alljson)
+- [`/id`](#id)
+- [`/powerstats`](#powerstats)
+- [`/appearance`](#appearance)
+- [`/biography`](#biography)
+- [`/connections`](#connections)
+- [`/work`](#work)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### [images](#images-1)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+----
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Routes
 
-### `npm run eject`
+##### `/all.json`
+GET all superheroes in a single JSON file
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+eg. [`/all.json`](https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+##### `/id`
+GET superhero complete informations by id
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+eg. [`/id/1.json`](https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/id/1.json)
+```json
+{
+  "id": 1,
+  "name": "A-Bomb",
+  "slug": "1-a-bomb",
+  "powerstats": {
+    "intelligence": 38,
+    "strength": 100,
+    "speed": 17,
+    "durability": 80,
+    "power": 24,
+    "combat": 64
+  },
+  "appearance": {
+    "gender": "Male",
+    "race": "Human",
+    "height": [
+      "6'8",
+      "203 cm"
+    ],
+    "weight": [
+      "980 lb",
+      "441 kg"
+    ],
+    "eyeColor": "Yellow",
+    "hairColor": "No Hair"
+  },
+  "biography": {
+    "fullName": "Richard Milhouse Jones",
+    "alterEgos": "No alter egos found.",
+    "aliases": [
+      "Rick Jones"
+    ],
+    "placeOfBirth": "Scarsdale, Arizona",
+    "firstAppearance": "Hulk Vol 2 #2 (April, 2008) (as A-Bomb)",
+    "publisher": "Marvel Comics",
+    "alignment": "good"
+  },
+  "work": {
+    "occupation": "Musician, adventurer, author; formerly talk show host",
+    "base": "-"
+  },
+  "connections": {
+    "groupAffiliation": "Hulk Family; Excelsior (sponsor), Avengers (honorary member); formerly partner of the Hulk, Captain America and Captain Marvel; Teen Brigade; ally of Rom",
+    "relatives": "Marlo Chandler-Jones (wife); Polly (aunt); Mrs. Chandler (mother-in-law); Keith Chandler, Ray Chandler, three unidentified others (brothers-in-law); unidentified father (deceased); Jackie Shorr (alleged mother; unconfirmed)"
+  },
+  "images": {
+    "xs": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/xs/1-a-bomb.jpg",
+    "sm": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/sm/1-a-bomb.jpg",
+    "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/1-a-bomb.jpg",
+    "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/1-a-bomb.jpg"
+  }
+}
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+##### `/powerstats`
+GET superhero powerstats by id
 
-## Learn More
+eg. [`/powerstats/1.json`](https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/powerstats/1.json)
+```json
+{
+  "intelligence": 38,
+  "strength": 100,
+  "speed": 17,
+  "durability": 80,
+  "power": 24,
+  "combat": 64
+}
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+##### `/appearance`
+GET superhero appearance by id
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+eg. [`/appearance/1.json`](https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/appearance/1.json)
+```json
+{
+  "gender": "Male",
+  "race": "Human",
+  "height": [
+    "6'8",
+    "203 cm"
+  ],
+  "weight": [
+    "980 lb",
+    "441 kg"
+  ],
+  "eyeColor": "Yellow",
+  "hairColor": "No Hair"
+}
+```
 
-### Code Splitting
+##### `/biography`
+GET superhero biography by id
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+eg. [`/biography/1.json`](https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/biography/1.json)
+```json
+{
+  "fullName": "Richard Milhouse Jones",
+  "alterEgos": "No alter egos found.",
+  "aliases": [
+    "Rick Jones"
+  ],
+  "placeOfBirth": "Scarsdale, Arizona",
+  "firstAppearance": "Hulk Vol 2 #2 (April, 2008) (as A-Bomb)",
+  "publisher": "Marvel Comics",
+  "alignment": "good"
+}
+```
 
-### Analyzing the Bundle Size
+##### `/connections`
+GET superhero connections by id
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+eg. [`/connections/1.json`](https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/connections/1.json)
+```json
+{
+  "groupAffiliation": "Hulk Family; Excelsior (sponsor), Avengers (honorary member); formerly partner of the Hulk, Captain America and Captain Marvel; Teen Brigade; ally of Rom",
+  "relatives": "Marlo Chandler-Jones (wife); Polly (aunt); Mrs. Chandler (mother-in-law); Keith Chandler, Ray Chandler, three unidentified others (brothers-in-law); unidentified father (deceased); Jackie Shorr (alleged mother; unconfirmed)"
+}
+```
 
-### Making a Progressive Web App
+##### `/work`
+GET superhero work by id
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+eg. [`/work/1.json`](https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/work/1.json)
+```json
+{
+  "occupation": "Musician, adventurer, author; formerly talk show host",
+  "base": "-"
+}
+```
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Images
+GET superhero image
 
-### Deployment
+- Thumb (~32x48)
+[`/images/xs/1-a-bomb.jpg`](https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/xs/1-a-bomb.jpg)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Small (~160x240)
+[`/images/sm/1-a-bomb.jpg`](https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/sm/1-a-bomb.jpg)
 
-### `npm run build` fails to minify
+- Medium (~320x480)
+[`/images/md/1-a-bomb.jpg`](https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/1-a-bomb.jpg)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Large (~480x640)
+[`/images/lg/1-a-bomb.jpg`](https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/1-a-bomb.jpg)
