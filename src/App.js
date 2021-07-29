@@ -33,7 +33,7 @@ export default function App() {
     <div className="container">
       <h1 className="header">ULTIMATE SUPERHERO INDEX</h1>
       <SearchBox searchChange={onSearchChange} />
-      <div className="stats">*hint: HOVER OVER A HERO FOR MORE INFO.</div>
+      <div className="stats">HOVER OVER A HERO FOR MORE INFO.</div>
       <Scroll>
         <CardList characters={filterCharacters} />
       </Scroll>
