@@ -1,3 +1,5 @@
+React Framework based application for searching superheroes through an open-source REST API
+
 
 # API
 
